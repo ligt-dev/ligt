@@ -6,4 +6,4 @@ SELECT ?sentence ?translation
 	?s a ligt:Utterance ;
 	   rdfs:label ?sentence ;
 	   ligt:translation ?translation .
-} LIMIT 10
+} LIMIT 50

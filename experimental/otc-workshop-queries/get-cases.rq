@@ -1,0 +1,19 @@
+PREFIX ligt: <http://purl.org/ligt/ligt-0.2#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX apics: <http://purl.org/liodi/ligt/apics/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX unimorph: <http://purl.org/olia/unimorph.owl#>
+
+SELECT (GROUP_CONCAT(DISTINCT ?case; SEPARATOR=", ") AS ?cases) ?lang
+WHERE {
+
+?morph ligt:gloss ?case ;
+rdfs:label ?label .
+
+?tag owl:sameAs ?case .
+
+?tag rdfs:subClassOf+ unimorph:Case .
+
+BIND(LANG(?label) as ?lang)
+FILTER(?lang != '')
+} GROUP BY ?lang
