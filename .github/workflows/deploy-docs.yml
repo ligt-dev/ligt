@@ -35,6 +35,7 @@ jobs:
           fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
+        working-directory: ./doc
         with:
           node-version: 22
           cache: npm
