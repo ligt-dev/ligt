@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Ligt RDF Vocabulary",
   description: "A reference and examples for Ligt RDF vocabulary",
+  base: '/ligt/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
