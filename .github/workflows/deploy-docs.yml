@@ -39,6 +39,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: './doc'
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
