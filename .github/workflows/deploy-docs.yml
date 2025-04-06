@@ -21,12 +21,13 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+defaults:
+  run:
+    working-directory: ./doc
+
 jobs:
   # Build job
   build:
-    defaults:
-      run:
-        working-directory: ./doc
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,7 +36,6 @@ jobs:
           fetch-depth: 0
       - name: Setup Node
         uses: actions/setup-node@v4
-        working-directory: ./doc
         with:
           node-version: 22
           cache: npm
